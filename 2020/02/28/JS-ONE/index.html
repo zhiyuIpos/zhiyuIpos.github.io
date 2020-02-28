@@ -110,15 +110,15 @@
 
 
 
-<meta name="description" content="###JS数据类型  基本数据类型:  undefined、null、boolean、number、string、symbol引用数据类型: object、array、function 基本数据类型和引用类型有什么差别 基本数据类型是直接存在变量本地的类型，（特点:按值传递） 引用类型是通过一个变量存放地址，通过地址指向内存中的对象。（特点:引用地址）    ###检测浏览器版本有哪些方式  na">
+<meta name="description" content="JS数据类型 基本数据类型:  undefined、null、boolean、number、string、symbol引用数据类型: object、array、function 基本数据类型和引用类型有什么差别 基本数据类型是直接存在变量本地的类型，（特点:按值传递） 引用类型是通过一个变量存放地址，通过地址指向内存中的对象。（特点:引用地址）    检测浏览器版本有哪些方式 navigator.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS基础知识(一)">
 <meta property="og:url" content="http://yoursite.com/2020/02/28/JS-ONE/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="###JS数据类型  基本数据类型:  undefined、null、boolean、number、string、symbol引用数据类型: object、array、function 基本数据类型和引用类型有什么差别 基本数据类型是直接存在变量本地的类型，（特点:按值传递） 引用类型是通过一个变量存放地址，通过地址指向内存中的对象。（特点:引用地址）    ###检测浏览器版本有哪些方式  na">
+<meta property="og:description" content="JS数据类型 基本数据类型:  undefined、null、boolean、number、string、symbol引用数据类型: object、array、function 基本数据类型和引用类型有什么差别 基本数据类型是直接存在变量本地的类型，（特点:按值传递） 引用类型是通过一个变量存放地址，通过地址指向内存中的对象。（特点:引用地址）    检测浏览器版本有哪些方式 navigator.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-02-28T01:56:05.000Z">
-<meta property="article:modified_time" content="2020-02-28T10:02:05.358Z">
+<meta property="article:modified_time" content="2020-02-28T10:57:05.507Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="css js">
 <meta name="twitter:card" content="summary">
@@ -354,8 +354,7 @@
       
 
       
-        <p>###JS数据类型</p>
-<ul>
+        <h3 id="JS数据类型"><a href="#JS数据类型" class="headerlink" title="JS数据类型"></a>JS数据类型</h3><ul>
 <li>基本数据类型:  undefined、null、boolean、number、string、symbol<br>引用数据类型: object、array、function</li>
 <li>基本数据类型和引用类型有什么差别<ul>
 <li>基本数据类型是直接存在变量本地的类型，（特点:按值传递）</li>
@@ -363,21 +362,18 @@
 </ul>
 </li>
 </ul>
-<p>###检测浏览器版本有哪些方式</p>
-<ul>
+<h3 id="检测浏览器版本有哪些方式"><a href="#检测浏览器版本有哪些方式" class="headerlink" title="检测浏览器版本有哪些方式"></a>检测浏览器版本有哪些方式</h3><ul>
 <li>navigator.userAgent  // UA.toLowerCase().indexOf(‘chrome’)</li>
 <li>根据window对象的成员 // ‘ActiveXObject’ in window</li>
 </ul>
-<p>###介绍JS有哪些内置对象</p>
-<ul>
+<h3 id="介绍JS有哪些内置对象"><a href="#介绍JS有哪些内置对象" class="headerlink" title="介绍JS有哪些内置对象"></a>介绍JS有哪些内置对象</h3><ul>
 <li>数据封装类型对象:Object、Array、Boolean、Number、String</li>
 </ul>
 <ul>
 <li>其他对象:Function、Arguments、Math、Date、RegExp、Error</li>
 </ul>
 <p>3.ES6新增对象:Sysbol、Map、Set、Promises、Proxy、Reflect</p>
-<p>###说几条Javascript的基本规范</p>
-<ul>
+<h3 id="说几条Javascript的基本规范"><a href="#说几条Javascript的基本规范" class="headerlink" title="说几条Javascript的基本规范"></a>说几条Javascript的基本规范</h3><ul>
 <li>代码缩进，建议使用”四个空格”缩进</li>
 <li>代码段使用花括号{}包裹</li>
 <li>变量和函数在使用前进行声明</li>
@@ -385,8 +381,7 @@
 <li>以大写字母开头命名构造哈数、全大写命名常量</li>
 <li>规范定义JSON对象、补全双括号</li>
 </ul>
-<p>###如何边写高性能Javascript</p>
-<ul>
+<h3 id="如何边写高性能Javascript"><a href="#如何边写高性能Javascript" class="headerlink" title="如何边写高性能Javascript"></a>如何边写高性能Javascript</h3><ul>
 <li>遵循 use stricct</li>
 <li>js脚本放在页面底部、加快渲染页面</li>
 <li>js脚本将脚本组成打包、减少请求</li>
@@ -396,16 +391,13 @@
 <li>缓存DOM节点的访问(JQUERY里面用的比较多,重复创建多个对象，会影响效率。用变量存起来查找的对象，链式操作)</li>
 <li>最小化重绘(repaint) 和回流 (reflow)</li>
 </ul>
-<p>###DOM 元素e和e.getAttribute(propName) 和 e.propName 有什么区别和联系</p>
-<ul>
+<h3 id="DOM-元素e和e-getAttribute-propName-和-e-propName-有什么区别和联系"><a href="#DOM-元素e和e-getAttribute-propName-和-e-propName-有什么区别和联系" class="headerlink" title="DOM 元素e和e.getAttribute(propName) 和 e.propName 有什么区别和联系"></a>DOM 元素e和e.getAttribute(propName) 和 e.propName 有什么区别和联系</h3><ul>
 <li>attribute不能读取布尔类型的值，可以读取自定义属性，e.propName可以读取布尔类型的值，不能读取自定义属性，可以读取html dom中的标准属性</li>
 </ul>
-<p>###offsetWidth/offsetHeight,chilentWidth/clientHeight 与 scrollWidth/scrollHeight区别</p>
-<blockquote>
+<h3 id="offsetWidth-offsetHeight-chilentWidth-clientHeight-与-scrollWidth-scrollHeight区别"><a href="#offsetWidth-offsetHeight-chilentWidth-clientHeight-与-scrollWidth-scrollHeight区别" class="headerlink" title="offsetWidth/offsetHeight,chilentWidth/clientHeight 与 scrollWidth/scrollHeight区别"></a>offsetWidth/offsetHeight,chilentWidth/clientHeight 与 scrollWidth/scrollHeight区别</h3><blockquote>
 <p>offsetWidth/offsetHeight  ：content + padding + border ,效果与e.getBoundingClientRect()相同<br>clientWidth/clientheight :conetnt + padding,如果有滚动条，也不包含滚动条<br>scrollWidth/scrollHeight  :content + padding + 溢出内容的尺寸</p>
 </blockquote>
-<p>###描述浏览器的渲染过程，DOM树和渲染树的区别</p>
-<ul>
+<h3 id="描述浏览器的渲染过程，DOM树和渲染树的区别"><a href="#描述浏览器的渲染过程，DOM树和渲染树的区别" class="headerlink" title="描述浏览器的渲染过程，DOM树和渲染树的区别"></a>描述浏览器的渲染过程，DOM树和渲染树的区别</h3><ul>
 <li>浏览器的渲染过程<ul>
 <li>解析HTML构建DOM(DOM树),并行请求css/img/js<ul>
 <li>css文件下载完成之后，开始构建CSSOM(csss树)</li>
@@ -425,15 +417,13 @@
 </ul>
 </li>
 </ul>
-<p>###重绘和回流(重排)的区别和关系?</p>
-<ul>
+<h3 id="重绘和回流-重排-的区别和关系"><a href="#重绘和回流-重排-的区别和关系" class="headerlink" title="重绘和回流(重排)的区别和关系?"></a>重绘和回流(重排)的区别和关系?</h3><ul>
 <li>重绘: 当前渲染树种的元素外观(如:颜色)发生改变时，不影响页面布局时，产生重绘</li>
 <li>回流: 当渲染树中的元素的布局(如:尺寸、位置…)发生改变时，产生回流重排</li>
 <li>注意: JS获取Layout属性值(如:offsetLeft、scrollTop…)也会引起回流</li>
 <li>回流必将引起重绘，而重绘不一样会引起回流</li>
 </ul>
-<p>###如何最小化的减少重绘和回流?</p>
-<ul>
+<h3 id="如何最小化的减少重绘和回流"><a href="#如何最小化的减少重绘和回流" class="headerlink" title="如何最小化的减少重绘和回流?"></a>如何最小化的减少重绘和回流?</h3><ul>
 <li>需要对元素进行复制操作时,可以先隐藏(display:none)，操作完成之后再显示</li>
 <li>需要创建多个dom节点时，使用DocumentFragement创建完成后一次性的加入document</li>
 <li>尽量避免使用table布局，因为他会重新读取内存，然后一次性渲染到页面上</li>
@@ -443,21 +433,18 @@
 </blockquote>
 </li>
 </ul>
-<p>###script的位置是否会影响首屏显示时间</p>
-<ul>
+<h3 id="script的位置是否会影响首屏显示时间"><a href="#script的位置是否会影响首屏显示时间" class="headerlink" title="script的位置是否会影响首屏显示时间"></a>script的位置是否会影响首屏显示时间</h3><ul>
 <li>在解析HTML生成DOM过程中,js文件的下载并行的，不需要处理到script节点，因此script的位置不影响首屏显示时间</li>
 <li>浏览器解析HTML是自上而下的线性过程，script作为HTML的一部分统一遵循这个原则</li>
 <li>script会延迟DomContentLoad，只显示其上部分首屏内容，从而显示首屏显示的完成时间</li>
 </ul>
-<p>###解释JavaScript中的变量提升</p>
-<ul>
+<h3 id="解释JavaScript中的变量提升"><a href="#解释JavaScript中的变量提升" class="headerlink" title="解释JavaScript中的变量提升"></a>解释JavaScript中的变量提升</h3><ul>
 <li>函数声明 和通过var声明的遍历经常被Javascript引擎隐式地提升到当前作用域的顶部</li>
 <li>声明语句中的赋值部分不会被提升，只有名称被提升</li>
 <li>函数声明优先于变量，如果变量名和函数名相同且未赋值，则函数声明覆盖变量声明</li>
 <li>如果函数有多个同名参数，那么最后一个参数会覆盖前面同名的参数</li>
 </ul>
-<p>###介绍JavaScript的原型,原型链?有什么特点?</p>
-<ul>
+<h3 id="介绍JavaScript的原型-原型链-有什么特点"><a href="#介绍JavaScript的原型-原型链-有什么特点" class="headerlink" title="介绍JavaScript的原型,原型链?有什么特点?"></a>介绍JavaScript的原型,原型链?有什么特点?</h3><ul>
 <li><strong>原型:</strong><ul>
 <li>JavaScript所有对象都有一个<strong>proto</strong>内部属性，这个属性对应的对象的原型</li>
 <li>函数对象除了原型之外，还有prototype属性</li>
@@ -474,8 +461,7 @@
 </ul>
 </li>
 </ul>
-<p>###你对面向对象的理解</p>
-<ul>
+<h3 id="你对面向对象的理解"><a href="#你对面向对象的理解" class="headerlink" title="你对面向对象的理解"></a>你对面向对象的理解</h3><ul>
 <li>面向对象 : 封装、继承、多态(重写)<ul>
 <li><strong>封装</strong><ul>
 <li>封装是什么:创建一个对象结构，集中保存一个事物的属性和功能</li>
@@ -505,7 +491,7 @@
 <li>什么是重写:在子对象中定义和父对象中成员同名的自由成员</li>
 <li>为什么:从父对象继承来的东西不总是好用的</li>
 <li>何时:只要从父对象继承来的不好用！就可以在子对象本地重写同名成员</li>
-<li>如何:在子对象里添加和父对象同名的自有成员即可<br>###JavaScript如何实现一个类，怎么实例化这个类?</li>
+<li>如何:在子对象里添加和父对象同名的自有成员即可<h3 id="JavaScript如何实现一个类，怎么实例化这个类"><a href="#JavaScript如何实现一个类，怎么实例化这个类" class="headerlink" title="JavaScript如何实现一个类，怎么实例化这个类?"></a>JavaScript如何实现一个类，怎么实例化这个类?</h3></li>
 </ul>
 </li>
 </ul>
@@ -521,8 +507,7 @@
 </blockquote>
 </li>
 </ul>
-<p>###JavaScript如何实现继承</p>
-<ul>
+<h3 id="JavaScript如何实现继承"><a href="#JavaScript如何实现继承" class="headerlink" title="JavaScript如何实现继承"></a>JavaScript如何实现继承</h3><ul>
 <li>构造函数 使用call,apply方法，将父对象的构造函数绑定到子对象上<blockquote>
 <p>function Cat(name,color){<br>&nbsp;Aimal.apply(this,arguments)<br>&nbsp;this.name =  name<br>&nbsp;this.color=color<br>}</p>
 </blockquote>
@@ -534,20 +519,17 @@
 <li>拷贝继承:把父对象所有属性和方法，拷贝进对象 </li>
 <li>ES6语法糖 extends </li>
 </ul>
-<p>###对象的创建方式</p>
-<blockquote>
+<h3 id="对象的创建方式"><a href="#对象的创建方式" class="headerlink" title="对象的创建方式"></a>对象的创建方式</h3><blockquote>
 <p>var  obj={}<br>var obj = new Object()<br>var obj = new new Student(xx)构造函数创建一个对象</p>
 </blockquote>
 <hr>
-<p>###谈谈this对象的理解</p>
-<ul>
+<h3 id="谈谈this对象的理解"><a href="#谈谈this对象的理解" class="headerlink" title="谈谈this对象的理解"></a>谈谈this对象的理解</h3><ul>
 <li>this总是指向函数的调用者</li>
 <li>如果有new 关键字，this指向new出来的实例对象</li>
 <li>在事件中，this指向触发这个事件的对象</li>
 <li>IE下 attacchEvent中的this总是指向全局对象window</li>
 </ul>
-<p>###浏览器兼容性问题:</p>
-<ul>
+<h3 id="浏览器兼容性问题"><a href="#浏览器兼容性问题" class="headerlink" title="浏览器兼容性问题:"></a>浏览器兼容性问题:</h3><ul>
 <li><p>事件绑定:onclick=function(){}(dom 0 级)</p>
 </li>
 <li><p>DOM: elem.addEventListener(“click”,function(){},false/true)</p>
@@ -604,8 +586,7 @@
 <li>elem.offsetTop //距离父元素顶部的距离</li>
 <li>elem.getBoundingClientRect() //返回DOMRect对象，包含一组描述边框的只读属性，单位为像素</li>
 </ul>
-<p>###防抖和节流</p>
-<ul>
+<h3 id="防抖和节流"><a href="#防抖和节流" class="headerlink" title="防抖和节流"></a>防抖和节流</h3><ul>
 <li>防抖:就是在规定时间内，只触发一次事件，如果未在规定时间内再次触发，则重新开始计算时间，直到规定时间满才触发事件，发送请求<blockquote>
 <p>var timer;<br>window.onscroll=function(){<br>//第一次滚动的时候，timer是为undefined的，所以它会执行发送请求的操作，但是如果在200ms之内它又滚动了，就会重新进来判断，此时的timer是有值的了，所以会清空掉，重新执行发送请求的代码</p>
 <p>&nbsp;&nbsp;if(timer!==undefined){<br>&nbsp;&nbsp;&nbsp;clearTimeout(timer)<br>&nbsp;&nbsp;}<br>&nbsp;timer = setTimeout(function(){<br>&nbsp;console.log(“发送请求啦”)<br>&nbsp;},200)<br>}</p>
@@ -618,12 +599,11 @@
 </blockquote>
 </li>
 </ul>
-<p>###分析[‘1’,’2’,’3’].map(parseInt)<br>答案:[1,NaN,NaN]</p>
+<h3 id="分析-‘1’-’2’-’3’-map-parseInt"><a href="#分析-‘1’-’2’-’3’-map-parseInt" class="headerlink" title="分析[‘1’,’2’,’3’].map(parseInt)"></a>分析[‘1’,’2’,’3’].map(parseInt)</h3><p>答案:[1,NaN,NaN]</p>
 <ul>
 <li>parseInt(string,radix) //表示进制数</li>
 </ul>
-<p>###new操作符具体干了什么</p>
-<ul>
+<h3 id="new操作符具体干了什么"><a href="#new操作符具体干了什么" class="headerlink" title="new操作符具体干了什么"></a>new操作符具体干了什么</h3><ul>
 <li>创建实例对象，this变量引用该地址，同时还继承了构造函数的原型</li>
 <li>属性和方法被加入到this应用对象中</li>
 <li>新创建的对象由this所引用，并且最后隐式的返回this</li>
@@ -813,7 +793,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何获得有一个DOM元素的绝对位置"><span class="nav-number">1.</span> <span class="nav-text">如何获得有一个DOM元素的绝对位置</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#JS数据类型"><span class="nav-number">1.</span> <span class="nav-text">JS数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#检测浏览器版本有哪些方式"><span class="nav-number">2.</span> <span class="nav-text">检测浏览器版本有哪些方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍JS有哪些内置对象"><span class="nav-number">3.</span> <span class="nav-text">介绍JS有哪些内置对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#说几条Javascript的基本规范"><span class="nav-number">4.</span> <span class="nav-text">说几条Javascript的基本规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何边写高性能Javascript"><span class="nav-number">5.</span> <span class="nav-text">如何边写高性能Javascript</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM-元素e和e-getAttribute-propName-和-e-propName-有什么区别和联系"><span class="nav-number">6.</span> <span class="nav-text">DOM 元素e和e.getAttribute(propName) 和 e.propName 有什么区别和联系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#offsetWidth-offsetHeight-chilentWidth-clientHeight-与-scrollWidth-scrollHeight区别"><span class="nav-number">7.</span> <span class="nav-text">offsetWidth&#x2F;offsetHeight,chilentWidth&#x2F;clientHeight 与 scrollWidth&#x2F;scrollHeight区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#描述浏览器的渲染过程，DOM树和渲染树的区别"><span class="nav-number">8.</span> <span class="nav-text">描述浏览器的渲染过程，DOM树和渲染树的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重绘和回流-重排-的区别和关系"><span class="nav-number">9.</span> <span class="nav-text">重绘和回流(重排)的区别和关系?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何最小化的减少重绘和回流"><span class="nav-number">10.</span> <span class="nav-text">如何最小化的减少重绘和回流?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#script的位置是否会影响首屏显示时间"><span class="nav-number">11.</span> <span class="nav-text">script的位置是否会影响首屏显示时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解释JavaScript中的变量提升"><span class="nav-number">12.</span> <span class="nav-text">解释JavaScript中的变量提升</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍JavaScript的原型-原型链-有什么特点"><span class="nav-number">13.</span> <span class="nav-text">介绍JavaScript的原型,原型链?有什么特点?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#你对面向对象的理解"><span class="nav-number">14.</span> <span class="nav-text">你对面向对象的理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript如何实现一个类，怎么实例化这个类"><span class="nav-number">15.</span> <span class="nav-text">JavaScript如何实现一个类，怎么实例化这个类?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript如何实现继承"><span class="nav-number">16.</span> <span class="nav-text">JavaScript如何实现继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象的创建方式"><span class="nav-number">17.</span> <span class="nav-text">对象的创建方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#谈谈this对象的理解"><span class="nav-number">18.</span> <span class="nav-text">谈谈this对象的理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器兼容性问题"><span class="nav-number">19.</span> <span class="nav-text">浏览器兼容性问题:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何获得有一个DOM元素的绝对位置"><span class="nav-number">20.</span> <span class="nav-text">如何获得有一个DOM元素的绝对位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#防抖和节流"><span class="nav-number">21.</span> <span class="nav-text">防抖和节流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分析-‘1’-’2’-’3’-map-parseInt"><span class="nav-number">22.</span> <span class="nav-text">分析[‘1’,’2’,’3’].map(parseInt)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#new操作符具体干了什么"><span class="nav-number">23.</span> <span class="nav-text">new操作符具体干了什么</span></a></li></ol></div>
             
 
           </div>
