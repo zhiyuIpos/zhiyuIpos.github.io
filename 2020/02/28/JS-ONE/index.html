@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<meta name="theme-color" content="#222">
+<style>
+    .pace .pace-progress {
+        background: #64ceaa; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: transparent;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="css js," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="###JS数据类型  基本数据类型:  undefined、null、boolean、number、string、symbol引用数据类型: object、array、function 基本数据类型和引用类型有什么差别 基本数据类型是直接存在变量本地的类型，（特点:按值传递） 引用类型是通过一个变量存放地址，通过地址指向内存中的对象。（特点:引用地址）    ###检测浏览器版本有哪些方式  na">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS基础知识(一)">
+<meta property="og:url" content="http://yoursite.com/2020/02/28/JS-ONE/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="###JS数据类型  基本数据类型:  undefined、null、boolean、number、string、symbol引用数据类型: object、array、function 基本数据类型和引用类型有什么差别 基本数据类型是直接存在变量本地的类型，（特点:按值传递） 引用类型是通过一个变量存放地址，通过地址指向内存中的对象。（特点:引用地址）    ###检测浏览器版本有哪些方式  na">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-28T01:56:05.000Z">
+<meta property="article:modified_time" content="2020-02-28T10:02:05.358Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="css js">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/02/28/JS-ONE/"/>
+
+
+
+
+
+  <title>JS基础知识(一) | Hexo</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+  
+  
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband">
+    <a href="https://github.com/zhiyuIpos" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    </div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title"> zhiyuIpos </span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-首页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-存档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            存档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-君君">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            君君
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/28/JS-ONE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JS基础知识(一)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-28T09:56:05+08:00">
+                2020-02-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>###JS数据类型</p>
+<ul>
+<li>基本数据类型:  undefined、null、boolean、number、string、symbol<br>引用数据类型: object、array、function</li>
+<li>基本数据类型和引用类型有什么差别<ul>
+<li>基本数据类型是直接存在变量本地的类型，（特点:按值传递）</li>
+<li>引用类型是通过一个变量存放地址，通过地址指向内存中的对象。（特点:引用地址）</li>
+</ul>
+</li>
+</ul>
+<p>###检测浏览器版本有哪些方式</p>
+<ul>
+<li>navigator.userAgent  // UA.toLowerCase().indexOf(‘chrome’)</li>
+<li>根据window对象的成员 // ‘ActiveXObject’ in window</li>
+</ul>
+<p>###介绍JS有哪些内置对象</p>
+<ul>
+<li>数据封装类型对象:Object、Array、Boolean、Number、String</li>
+</ul>
+<ul>
+<li>其他对象:Function、Arguments、Math、Date、RegExp、Error</li>
+</ul>
+<p>3.ES6新增对象:Sysbol、Map、Set、Promises、Proxy、Reflect</p>
+<p>###说几条Javascript的基本规范</p>
+<ul>
+<li>代码缩进，建议使用”四个空格”缩进</li>
+<li>代码段使用花括号{}包裹</li>
+<li>变量和函数在使用前进行声明</li>
+<li>语句结束使用分号</li>
+<li>以大写字母开头命名构造哈数、全大写命名常量</li>
+<li>规范定义JSON对象、补全双括号</li>
+</ul>
+<p>###如何边写高性能Javascript</p>
+<ul>
+<li>遵循 use stricct</li>
+<li>js脚本放在页面底部、加快渲染页面</li>
+<li>js脚本将脚本组成打包、减少请求</li>
+<li>使用非阻塞方式下载js脚本</li>
+<li>尽量使用局部变量来保存全局变量</li>
+<li>尽量减少使用闭包</li>
+<li>缓存DOM节点的访问(JQUERY里面用的比较多,重复创建多个对象，会影响效率。用变量存起来查找的对象，链式操作)</li>
+<li>最小化重绘(repaint) 和回流 (reflow)</li>
+</ul>
+<p>###DOM 元素e和e.getAttribute(propName) 和 e.propName 有什么区别和联系</p>
+<ul>
+<li>attribute不能读取布尔类型的值，可以读取自定义属性，e.propName可以读取布尔类型的值，不能读取自定义属性，可以读取html dom中的标准属性</li>
+</ul>
+<p>###offsetWidth/offsetHeight,chilentWidth/clientHeight 与 scrollWidth/scrollHeight区别</p>
+<blockquote>
+<p>offsetWidth/offsetHeight  ：content + padding + border ,效果与e.getBoundingClientRect()相同<br>clientWidth/clientheight :conetnt + padding,如果有滚动条，也不包含滚动条<br>scrollWidth/scrollHeight  :content + padding + 溢出内容的尺寸</p>
+</blockquote>
+<p>###描述浏览器的渲染过程，DOM树和渲染树的区别</p>
+<ul>
+<li>浏览器的渲染过程<ul>
+<li>解析HTML构建DOM(DOM树),并行请求css/img/js<ul>
+<li>css文件下载完成之后，开始构建CSSOM(csss树)</li>
+<li>CSSOM构建结束之后,和DOM一起生成Render Tree(渲染树)</li>
+<li>布局(layout):计算出每个节点在屏幕上的位置</li>
+<li>显示(Painting):通过显卡把页面画到屏幕上</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>DOM树和渲染树的区别:<ul>
+<li>DOM树与HTML标签一一对应，包括head和隐藏元素</li>
+<li>渲染树不包括head和隐藏元素，打算文本的每一行都是独立节点，每个节点都有对应的css属性</li>
+</ul>
+</li>
+</ul>
+<p>###重绘和回流(重排)的区别和关系?</p>
+<ul>
+<li>重绘: 当前渲染树种的元素外观(如:颜色)发生改变时，不影响页面布局时，产生重绘</li>
+<li>回流: 当渲染树中的元素的布局(如:尺寸、位置…)发生改变时，产生回流重排</li>
+<li>注意: JS获取Layout属性值(如:offsetLeft、scrollTop…)也会引起回流</li>
+<li>回流必将引起重绘，而重绘不一样会引起回流</li>
+</ul>
+<p>###如何最小化的减少重绘和回流?</p>
+<ul>
+<li>需要对元素进行复制操作时,可以先隐藏(display:none)，操作完成之后再显示</li>
+<li>需要创建多个dom节点时，使用DocumentFragement创建完成后一次性的加入document</li>
+<li>尽量避免使用table布局，因为他会重新读取内存，然后一次性渲染到页面上</li>
+<li>css属性简写</li>
+<li>避免使用css表达式，每次重新调用都会重新计算值<blockquote>
+<p>background-color:expression((new Date().getHours()%2 ?”#B8D4FF”:”#F08A00”))</p>
+</blockquote>
+</li>
+</ul>
+<p>###script的位置是否会影响首屏显示时间</p>
+<ul>
+<li>在解析HTML生成DOM过程中,js文件的下载并行的，不需要处理到script节点，因此script的位置不影响首屏显示时间</li>
+<li>浏览器解析HTML是自上而下的线性过程，script作为HTML的一部分统一遵循这个原则</li>
+<li>script会延迟DomContentLoad，只显示其上部分首屏内容，从而显示首屏显示的完成时间</li>
+</ul>
+<p>###解释JavaScript中的变量提升</p>
+<ul>
+<li>函数声明 和通过var声明的遍历经常被Javascript引擎隐式地提升到当前作用域的顶部</li>
+<li>声明语句中的赋值部分不会被提升，只有名称被提升</li>
+<li>函数声明优先于变量，如果变量名和函数名相同且未赋值，则函数声明覆盖变量声明</li>
+<li>如果函数有多个同名参数，那么最后一个参数会覆盖前面同名的参数</li>
+</ul>
+<p>###介绍JavaScript的原型,原型链?有什么特点?</p>
+<ul>
+<li><strong>原型:</strong><ul>
+<li>JavaScript所有对象都有一个<strong>proto</strong>内部属性，这个属性对应的对象的原型</li>
+<li>函数对象除了原型之外，还有prototype属性</li>
+<li>当函数对象作为构造函数创建实例时，该prototype属性将被作为实例对象的原型</li>
+</ul>
+</li>
+<li><strong>原型链:</strong><ul>
+<li>当一个对象调用的属性/方法自身不存在时，就回去自己的原型对象上查找</li>
+<li>如果没找到，就去当前<strong>proto</strong>的上一辈的<strong>proto</strong>上找，直到找到属性/方法或undefined为止</li>
+</ul>
+</li>
+<li><strong>原型特点:</strong><ul>
+<li>JavaScript对象是通过引用来传递的，当修改原型时，与之相关的对象也会继承这一改变</li>
+</ul>
+</li>
+</ul>
+<p>###你对面向对象的理解</p>
+<ul>
+<li>面向对象 : 封装、继承、多态(重写)<ul>
+<li><strong>封装</strong><ul>
+<li>封装是什么:创建一个对象结构，集中保存一个事物的属性和功能</li>
+<li>为什么要使用封装:便于大量数据的维护和使用</li>
+<li>何时使用封装:只要使用面向对象的方式变成，都要先创建对象，保存所需的数据和功能，然后按需调用对象中的成员</li>
+<li>如何实现<blockquote>
+<p>var obj={<br>&nbsp;&nbsp;xx:xx,<br>&nbsp;&nbsp;fun(){<br>&nbsp;&nbsp;xxx<br>&nbsp;&nbsp;}<br>}</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><strong>继承</strong><ul>
+<li>继承是什么:父对象中的成员，子对象无需重复创建，就可直接使用</li>
+<li>为什么要使用继承:代码重用，节约内存</li>
+<li>何时使用继承:js中的继承都是通过原型对象来实现</li>
+<li>继承如何实现<ul>
+<li>通过new一个构造函数创建</li>
+<li>es6通过new 一个钩子函数创建</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>多态</strong><ul>
+<li>什么是多态:一个函数在不同情况下表现出来的不同的状态</li>
+<li>包括:重载和重写</li>
+<li>重写<ul>
+<li>什么是重写:在子对象中定义和父对象中成员同名的自由成员</li>
+<li>为什么:从父对象继承来的东西不总是好用的</li>
+<li>何时:只要从父对象继承来的不好用！就可以在子对象本地重写同名成员</li>
+<li>如何:在子对象里添加和父对象同名的自有成员即可<br>###JavaScript如何实现一个类，怎么实例化这个类?</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>构造函数（new xx）<blockquote>
+<p>  function Point(x,y){<br>&nbsp;&nbsp;&nbsp;this.x = x<br>&nbsp;&nbsp;&nbsp;this.y = y<br>  }<br>  Point.prototype.toString=function(){<br>&nbsp;&nbsp;&nbsp;&nbsp;return <code>${this.x}:${this.y}</code><br>}<br>var point = new Point(2,3)</p>
+</blockquote>
+</li>
+<li>ES6语法糖 class 用new关键字生成实例对象<blockquote>
+<p>class Point{<br>  constructor(x,y){<br>&nbsp;&nbsp;&nbsp;this.x = x<br>&nbsp;&nbsp;&nbsp;this.y = y<br>&nbsp;}<br>  toString(){<br>&nbsp;&nbsp;&nbsp;return <code>${this.x}:${this.y}</code><br>&nbsp;}<br>}<br>var point = new Point(2,3)</p>
+</blockquote>
+</li>
+</ul>
+<p>###JavaScript如何实现继承</p>
+<ul>
+<li>构造函数 使用call,apply方法，将父对象的构造函数绑定到子对象上<blockquote>
+<p>function Cat(name,color){<br>&nbsp;Aimal.apply(this,arguments)<br>&nbsp;this.name =  name<br>&nbsp;this.color=color<br>}</p>
+</blockquote>
+</li>
+<li>实例继承，将子对象的prototype指向父对象的一个实例<blockquote>
+<p>Cat.prototype = new Animal()<br>Cat.prototype.constructor = Cat</p>
+</blockquote>
+</li>
+<li>拷贝继承:把父对象所有属性和方法，拷贝进对象 </li>
+<li>ES6语法糖 extends </li>
+</ul>
+<p>###对象的创建方式</p>
+<blockquote>
+<p>var  obj={}<br>var obj = new Object()<br>var obj = new new Student(xx)构造函数创建一个对象</p>
+</blockquote>
+<hr>
+<p>###谈谈this对象的理解</p>
+<ul>
+<li>this总是指向函数的调用者</li>
+<li>如果有new 关键字，this指向new出来的实例对象</li>
+<li>在事件中，this指向触发这个事件的对象</li>
+<li>IE下 attacchEvent中的this总是指向全局对象window</li>
+</ul>
+<p>###浏览器兼容性问题:</p>
+<ul>
+<li><p>事件绑定:onclick=function(){}(dom 0 级)</p>
+</li>
+<li><p>DOM: elem.addEventListener(“click”,function(){},false/true)</p>
+<ul>
+<li>外向内:捕获</li>
+<li>目标触发</li>
+<li>内向外:冒泡</li>
+</ul>
+</li>
+<li><p>IE8:btn.attachEvent(‘onclick’,function(){})</p>
+<ul>
+<li>目标触发</li>
+<li>内向外:冒泡</li>
+</ul>
+</li>
+<li><p>获得事件对象的方法</p>
+<ul>
+<li>DOM:elem.addEventListener(‘click’,function(e){e-&gt;event})</li>
+<li>IE8:elem.addattachEvent(‘click’,function(){var e=window.event})</li>
+</ul>
+</li>
+<li><p>获得目标元素</p>
+<ul>
+<li>DOM: e.target</li>
+<li>IE8: e.srcElement</li>
+</ul>
+</li>
+<li><p>阻止冒泡</p>
+<ul>
+<li>DOM：e.stopPropagetion()</li>
+<li>IE8: e.cancelBubble = true</li>
+</ul>
+</li>
+<li><p>阻止默认行为</p>
+<ul>
+<li>DOM: e.preventDefault()</li>
+<li>IE8: 事件处理函数中:e.returnValue =false</li>
+</ul>
+</li>
+<li><p>移除事件</p>
+<ul>
+<li>DOM: e.removeEventListener(‘click’,handle,false)</li>
+<li>e.detachEvent(event,handle) </li>
+</ul>
+</li>
+<li><p>定义一个函数，可以支持所有处理函数的绑定</p>
+<blockquote>
+<p>function bindEvent(elem,type,handle){<br>&nbsp;&nbsp; //判断当前的的attachEvent是否是一个方法，如果是表示运行在IE8中，如果不是表示运行在其他浏览器中<br>&nbsp;&nbsp;if(elem.attachEvent !== ‘function’){<br> &nbsp;&nbsp;&nbsp;&nbsp;elem.addEventListener(type,handle)<br> &nbsp;&nbsp;}else{<br> &nbsp;&nbsp;&nbsp;&nbsp;//因为在attach中的this指向的是window，所以要绑定为当前的elem这个对象<br> &nbsp; &nbsp;&nbsp;elem.attachEvent(‘on’+type,function(){<br> &nbsp;&nbsp;&nbsp;&nbsp;let e = window.event<br> &nbsp;&nbsp;&nbsp;&nbsp;e.target = e.srcElement<br> &nbsp;&nbsp;&nbsp;&nbsp;//临时绑定this为当前的elem<br> &nbsp;&nbsp;&nbsp;&nbsp;handle(e).call(this,e)<br> &nbsp; &nbsp;&nbsp;})<br>}<br>}<br>handle(btn,’click’,function(e){xxx})</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="如何获得有一个DOM元素的绝对位置"><a href="#如何获得有一个DOM元素的绝对位置" class="headerlink" title="如何获得有一个DOM元素的绝对位置"></a>如何获得有一个DOM元素的绝对位置</h3><ul>
+<li>elem.offsetLeft // 距离父元素左侧的位置</li>
+<li>elem.offsetTop //距离父元素顶部的距离</li>
+<li>elem.getBoundingClientRect() //返回DOMRect对象，包含一组描述边框的只读属性，单位为像素</li>
+</ul>
+<p>###防抖和节流</p>
+<ul>
+<li>防抖:就是在规定时间内，只触发一次事件，如果未在规定时间内再次触发，则重新开始计算时间，直到规定时间满才触发事件，发送请求<blockquote>
+<p>var timer;<br>window.onscroll=function(){<br>//第一次滚动的时候，timer是为undefined的，所以它会执行发送请求的操作，但是如果在200ms之内它又滚动了，就会重新进来判断，此时的timer是有值的了，所以会清空掉，重新执行发送请求的代码</p>
+<p>&nbsp;&nbsp;if(timer!==undefined){<br>&nbsp;&nbsp;&nbsp;clearTimeout(timer)<br>&nbsp;&nbsp;}<br>&nbsp;timer = setTimeout(function(){<br>&nbsp;console.log(“发送请求啦”)<br>&nbsp;},200)<br>}</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li>节流:在上一个请求完成之后才触发下一个请求<blockquote>
+<p>var canClick = true//开关变量<br>btn.click=function(){<br> &nbsp;&nbsp;if(canClick){<br>&nbsp;&nbsp;&nbsp;canClick=false //关开关<br>&nbsp;&nbsp;&nbsp;setTimeout(function(){<br> &nbsp;&nbsp;&nbsp;&nbsp;console.log(“请求完成”)<br>&nbsp;&nbsp;&nbsp;&nbsp;canClick= true //打开开关<br>&nbsp;&nbsp;&nbsp;})<br>&nbsp;&nbsp;}<br>}</p>
+</blockquote>
+</li>
+</ul>
+<p>###分析[‘1’,’2’,’3’].map(parseInt)<br>答案:[1,NaN,NaN]</p>
+<ul>
+<li>parseInt(string,radix) //表示进制数</li>
+</ul>
+<p>###new操作符具体干了什么</p>
+<ul>
+<li>创建实例对象，this变量引用该地址，同时还继承了构造函数的原型</li>
+<li>属性和方法被加入到this应用对象中</li>
+<li>新创建的对象由this所引用，并且最后隐式的返回this</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+    <div>
+      
+        
+      
+    </div>
+
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css-js/" <i class="fa fa-tag"></i> css js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/25/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" rel="next" title="第一篇文章">
+                <i class="fa fa-chevron-left"></i> 第一篇文章
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/szxdf.png"
+               alt="John Doe" />
+          <p class="site-author-name" itemprop="name">zhiyuIpos</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">文章</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何获得有一个DOM元素的绝对位置"><span class="nav-number">1.</span> <span class="nav-text">如何获得有一个DOM元素的绝对位置</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+
+</div>
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
+    NexT.Muse
+  </a>
+</div>
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共2.8k字</span>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
