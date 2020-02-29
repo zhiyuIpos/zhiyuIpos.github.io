@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-02-29T01:36:06.619Z</updated>
+  <updated>2020-02-29T01:45:58.895Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,19 +17,19 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>flapCard-翻转图书动画</title>
-    <link href="http://yoursite.com/2020/02/29/flapCard-%E7%BF%BB%E8%BD%AC%E5%9B%BE%E4%B9%A6%E5%8A%A8%E7%94%BB/"/>
-    <id>http://yoursite.com/2020/02/29/flapCard-%E7%BF%BB%E8%BD%AC%E5%9B%BE%E4%B9%A6%E5%8A%A8%E7%94%BB/</id>
-    <published>2020-02-29T01:15:10.000Z</published>
-    <updated>2020-02-29T01:36:06.619Z</updated>
+    <title>flapCard-翻转卡片动画</title>
+    <link href="http://yoursite.com/2020/02/29/flapCard-%E7%BF%BB%E8%BD%AC%E5%8D%A1%E7%89%87%E5%8A%A8%E7%94%BB/"/>
+    <id>http://yoursite.com/2020/02/29/flapCard-%E7%BF%BB%E8%BD%AC%E5%8D%A1%E7%89%87%E5%8A%A8%E7%94%BB/</id>
+    <published>2020-02-29T01:44:54.000Z</published>
+    <updated>2020-02-29T01:45:58.895Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="flapcard.png" alt=""></p>]]></content>
+    <content type="html"><![CDATA[<p><img src="/.com//flapCard.png" alt></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;img src=&quot;flapcard.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;img src=&quot;/.com//flapCard.png&quot; alt&gt;&lt;/p&gt;
 
       
     
